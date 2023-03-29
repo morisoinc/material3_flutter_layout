@@ -31,15 +31,15 @@ class _StarButtonState extends State<StarButton> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedRotation(
-      turns: turns,
-      curve: Curves.decelerate,
-      duration: const Duration(milliseconds: 300),
-      child: FloatingActionButton(
-        elevation: 0,
-        shape: const CircleBorder(),
-        backgroundColor: _colorScheme.surface,
-        onPressed: () => _toggle(),
+    return FloatingActionButton(
+      elevation: 0,
+      shape: const CircleBorder(),
+      backgroundColor: _colorScheme.surface,
+      onPressed: () => _toggle(),
+      child: AnimatedRotation(
+        turns: turns,
+        curve: Curves.easeOutExpo,
+        duration: const Duration(milliseconds: 450),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: icon,
